@@ -12,7 +12,7 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
-;;(add-to-list 'load-path "/home/dennis/Downloads/twittering-mode-3.0.0")
+;;(add-to-list 'load-path "/path/to/twittering-mode-3.0.0")
 ;;(require 'twittering-mode)
 ;;(setq twittering-icon-mode t)
 ;;;;(setq twittering-convert-fix-size SIZE)

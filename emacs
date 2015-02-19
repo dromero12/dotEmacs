@@ -1,11 +1,21 @@
 (set-face-foreground 'font-lock-comment-face "orange")
 (set-mouse-color "goldenrod")
 
+;; (require 'package)
+;; (add-to-list 'package-archives 
+;;     '("marmalade" .
+;;       "http://marmalade-repo.org/packages/"))
+;; (package-initialize)
+
 (require 'package)
-(add-to-list 'package-archives 
-    '("marmalade" .
-      "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
+
+(slime-setup '(slime-fancy))
 
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
@@ -45,7 +55,7 @@
 (column-number-mode 1)
 
 ;;; Impresion
-(setq printer-name "lp") ;Impresora default en Secretaria
+(setq printer-name "lp") ;Impresora default
 ;;(setq printer-name "lp2") ; Imprime en Sala Comun
 ;;(setq printer-name "//econestad/color") ; Imprime en Color
 ;;(setq ps-printer-name "//econestad/secre") ; si la impresora PostScript es
@@ -59,7 +69,7 @@
 ;; Word wrap
 (setq-default auto-fill-function 'do-auto-fill)
 ;; Acorta lineas largas automaticamente solo en pantalla sin cambiar el lineado
-(load "longlines")
+;; (load "longlines")
 ;; Mas sobre edicion y finales de linea
 ;;(setq next-line-add-newlines nil)
 (setq-default truncate-lines nil)

@@ -1,12 +1,6 @@
 (set-face-foreground 'font-lock-comment-face "orange")
 (set-mouse-color "goldenrod")
 
-;; (require 'package)
-;; (add-to-list 'package-archives 
-;;     '("marmalade" .
-;;       "http://marmalade-repo.org/packages/"))
-;; (package-initialize)
-
 (require 'package)
 (add-to-list 'package-archives
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
@@ -15,25 +9,10 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
-(slime-setup '(slime-fancy))
-
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
-
-;;(add-to-list 'load-path "/path/to/twittering-mode-3.0.0")
-;;(require 'twittering-mode)
-;;(setq twittering-icon-mode t)
-;;;;(setq twittering-convert-fix-size SIZE)
-;;(setq twittering-display-remaining t)
-;;(setq twittering-use-master-password t)
-
-;;(setq twittering-initial-timeline-spec-string
-;;      '(":direct_messages"
-;;        ":replies"
-;;        ":favorites"
-;;        ":home"))
 
 ;; (setq twittering-tinyurl-service 'tinyurl.com)
 
@@ -108,17 +87,16 @@
     (flyspell-buffer))) 
 
 ;;; Octave
-(autoload 'octave-mode "octave-mod" nil t)  ;; lanza con M-x run-octave
-(setq auto-mode-alist
-      (cons '("\\.m$" . octave-mode) auto-mode-alist))
-; font-lock, autofill y abreviaturas
-(add-hook 'octave-mode-hook
-          (lambda ()
-            (abbrev-mode 1)
-            (auto-fill-mode 1)
-            (if (eq window-system 'x)
-                (font-lock-mode 1))))
-
+;;(autoload 'octave-mode "octave-mod" nil t)  ;; lanza con M-x run-octave
+;;(setq auto-mode-alist
+;;      (cons '("\\.m$" . octave-mode) auto-mode-alist))
+;; font-lock, autofill y abreviaturas
+;;(add-hook 'octave-mode-hook
+;;         (lambda ()
+;;            (abbrev-mode 1)
+;;            (auto-fill-mode 1)
+;;            (if (eq window-system 'x)
+;;                (font-lock-mode 1))))
 
  (show-paren-mode 1)
  (set-face-background 'show-paren-match-face "light blue")
